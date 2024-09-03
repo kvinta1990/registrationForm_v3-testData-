@@ -1,0 +1,30 @@
+
+
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.withType(JavaCompiler) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
+    testImplementation (
+            "com.codeborne:selenide:7.3.2",
+            "org.junit.jupiter:junit-jupiter:5.10.2",
+            "com.github.javafaker:javafaker:1.0.2"
+    )
+}
+
+tasks.withType(JavaCompiler) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
